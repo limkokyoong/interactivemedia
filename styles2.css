@@ -1,0 +1,313 @@
+body {
+
+	position: relative;
+	z-index: -3;
+/*  background-color: #FAD3CE;*/
+}
+
+/*this is your canvas*/
+/*to get an animation to work, you must bind the animation to an element*/
+/*by specifying style inside the @keyframe rule, the animation will gradually change from the current style to the new style at certain frame*/
+
+#container {
+	/*negative px to get ride of white norder in div*/
+	margin: -10px;
+/*	margin: auto;*/
+	width: 1440px;
+	height: 960px;
+	background-color: #FAD3CE;
+	position: relative;
+	z-index: -2;
+	animation-name: color-change;
+	animation-duration: 5s;
+
+
+
+/*specify the cycles: normal/forwards, reverse, alternate, alternate-reverse*/
+animation-direction: alternate;
+
+/*specify a delay at the start of an animation*/
+animation-delay: 2s;
+
+  /*animation fill mode can override the element style: 
+  none: animation will not apply any styles to the element before or after execution
+  forwards: the element will retain the style values set by the last keyframe
+  backwards: the element will get the style values set by the first keyframe
+  both: animation will follow the rules for both forwards and backwards */
+  animation-fill-mode: none;
+
+/*specify the number of times an animation should run, you can use number or use inifite to make animation continue for ever  */
+animation-iteration-count: infinite; 
+
+/*specify the speed curve of the animation
+https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_speed
+ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)
+linear - Specifies an animation with the same speed from start to end
+ease-in - Specifies an animation with a slow start
+ease-out - Specifies an animation with a slow end
+ease-in-out - Specifies an animation with a slow start and end
+*/
+  animation-timing-function: ease-in;
+
+/*  animation: color-change 5s linear 5 alternate forwards;*/
+}
+
+
+@keyframes color-change {
+	from{background-color: red}
+	to{background-color: yellow}
+
+/*use & to represent keyframe*/
+/*
+
+  0% {background-color:#3045bf}
+  25% {background-color: pink}
+  50% {background-color: green}
+  75% {background-color: black }
+  100% {background-color: beige}
+*/
+}
+
+#first-group{
+  position: absolute;
+  top: 300px;
+  left:600px;
+  transform: rotate(20deg);
+}
+
+#one {
+  background-color: #3045bf;
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 10px;
+  left: 50px;
+}
+
+#two {
+  background-color: #3045bf;
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 15px;
+  left: 50px;
+}
+
+#three {
+  background-color: #99bff2;
+  position: relative;
+  width: 250px;
+  height: 5px;
+  left: 10px;
+}
+
+
+
+#four{
+
+width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: goaround;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes goaround {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:1000px; top:0px;}
+  50%  {background-color:blue; left:1000px; top:800px;}
+  75%  {background-color:green; left:0px; top:800px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+#five {
+  background-color: #f2c063;
+  position: relative;
+  width: 80px;
+  height: 15px;
+  left: 60px;
+  top: 55px;
+  transform: rotate(20deg);
+}
+
+#six {
+  background-color: #3045bf;
+  position: relative;
+  width: 170px;
+  height: 100px;
+  left: 250px;
+}
+
+#seven {
+  background-color: #f26d85;
+  position: relative;
+  width: 300px;
+  height: 100px;
+  left: 200px;
+  top: 20px;
+}
+
+#eight {
+  background-color: #99bff2;
+  position: relative;
+  width: 250px;
+  height: 100px;
+  left: 150px;
+  top: 20px;
+}
+
+
+
+#nine {
+  background-color: #f2c063;
+  width: 20px;
+  height: 200px;
+  position: absolute;
+  left: 170px;
+  top: 300px;
+  transform: rotate(4deg);
+}
+
+#ten {
+  background-color: #f26d85;
+  width: 10px;
+  height: 100px;
+  position: absolute;
+  left: 200px;
+  top: 400px;
+  transform: rotate(6deg);
+  z-index: -1;
+}
+
+#eleven {
+  background-color: #3045bf;
+  width: 15px;
+  height: 300px;
+  position: absolute;
+  top: 390px;
+  left: 100px;
+  bottom: 0px;
+  transform: rotate(-10deg);
+  filter: drop-shadow(10px 10px 20px magenta);
+}
+
+#twelve {
+  background-image: linear-gradient(to left, blue, pink);
+  width: 50px;
+  height: 200px;
+  position: absolute;
+  top: 480px;
+  left: 150px;
+  bottom: 0px;
+  transform: rotate(-5deg);
+}
+
+#thirteen {
+/*  padding: 20px;*/
+  background-color: #f2c063;
+  border-radius: 500px;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  top: 350px;
+  left: 600px;
+  transform: rotate(-80deg);
+  transition: width 2s, height 5s;
+}
+
+#thirteen:hover {
+  width: 600px;
+  height: 650px;
+/*  padding: 100px;*/
+}
+
+#poem {
+  color:white;
+  transition: font-size 2s;
+}
+
+#poem:hover{
+  font-size: 50px;
+}
+
+#fourteen {
+  background-color: #f2c063;
+  width: 10px;
+  height: 300px;
+  position: absolute;
+  top: 850px;
+  left: 750px;
+  transform: rotate(10deg);
+  z-index: -1;
+}
+
+
+#fifteen {
+  background-color: #99bff2;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 180px;
+  left: 50px;
+  transition: all 1s;
+}
+
+#fifteen:hover {
+  transform: scale(1.5, 1.5);
+}
+
+
+#second-group{
+  position: relative;
+  transform: rotate(-40deg);
+  top: 70px;
+  animation: moving1 5s linear infinite;
+  transform: skew(30deg);
+
+}
+
+
+@keyframes moving1 {
+	0% {left:0px}
+	50% {left:100px}
+	100% {top:100px; left:0px}
+}
+
+@keyframes moving2 {
+  0% {top:0}
+  50% {top:100px}
+  100% {top:0}
+}
+
+
+
+#sixteen{
+
+	width: 800px;
+	height: 141px;
+/*		/*display: block;
+		display: inline-grid;*/
+		background:transparent url('img/texture1.jpg') center top no-repeat;
+		transform: rotate(45deg) skew(40deg) perspective(5px);
+		position: relative;
+	animation: moving2 5s linear infinite;
+
+	}
+
+	/* on mouse-over the image is replaced: */
+	#sixteen:hover {
+		background-image: url('img/texture2.jpg');
+	}
+
+	#sixteen:active {
+		background-image: url('img/texture3.jpg');
+	}
+
+
+
+
+
